@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 import ru.tandser.finesnew.model.User;
 import ru.tandser.finesnew.repository.UserRepository;
 
+import java.util.Optional;
+
 import static java.util.Objects.requireNonNull;
 
 @Repository
@@ -14,7 +16,7 @@ class UserRepositoryImpl implements UserRepository {
     private JpaUserRepository jpaUserRepository;
 
     @Override
-    public User getByLicense(String license) {
+    public Optional<User> getByLicense(String license) {
         return jpaUserRepository.findOneByLicense(requireNonNull(license));
     }
 }

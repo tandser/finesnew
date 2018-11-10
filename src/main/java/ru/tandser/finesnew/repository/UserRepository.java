@@ -2,7 +2,9 @@ package ru.tandser.finesnew.repository;
 
 import ru.tandser.finesnew.model.User;
 
+import java.util.Optional;
+
 public interface UserRepository {
 
-    User getByLicense(String license);
+    Optional<User> getByLicense(String license);
 }
